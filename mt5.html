@@ -20,9 +20,15 @@
         let ip;
 
         ip = window.location.origin;
+        let host;
+        host = window.location.host;
 
         let html = document.getElementById("map");
-        html.innerText = ip;
+
+        let str;
+        str = "origin= " + ip + " \n " + " ; host= " + host;
+
+        html.innerText = str;
 
     </script>
 </body>
