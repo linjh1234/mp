@@ -21,9 +21,9 @@ class WinOnLoad {
          let map = new mapboxgl.Map({
             accessToken: WebWasm.MapboxModule.ccall('get_accessToken', 'string', [], []),
             container: 'map',
-            //style: 'mapbox://styles/mapbox/satellite-v9',//無中文字;不會發生  glyphs > 65535 not supported 錯誤
+            style: 'mapbox://styles/mapbox/satellite-v9',//無中文字;不會發生  glyphs > 65535 not supported 錯誤
             //style: 'mapbox://styles/mapbox/satellite-streets-v12',
-            style: 'mapbox://styles/mapbox/streets-v12', // streets 一定要載入 mapbox style 否則很多功能都無法用
+            //style: 'mapbox://styles/mapbox/streets-v12', // streets 一定要載入 mapbox style 否則很多功能都無法用
             center: [121.506, 25.045], // [121.506,25.045]  [120.892, 23.821]
             preserveDrawingBuffer: true,//讓畫面可供存檔
             language: "zh-Hant",
