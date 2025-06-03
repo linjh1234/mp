@@ -75,7 +75,7 @@ class WebWasm {
             ////模組 物件 功能函式測試:
             //WebWasm.testWasmModuleFun();
             //所有wasm模組全部載入完成,再執行winOnLoad(),
-            //WinOnLoad.winOnLoad();
+            WinOnLoad.winOnLoad();
             console.log("wasm load complete: =" + WebWasm.currentWasmCount);
         }
         //console.log("WebWasm.currentWasmCount=" + WebWasm.currentWasmCount + " ; Module.fileURL=" + this.fileURL);
