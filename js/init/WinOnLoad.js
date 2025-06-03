@@ -17,6 +17,7 @@ class WinOnLoad {
     /**loadWasm() complete -->winOnLoad ()*/
     static winOnLoad() {
         console.log("WinOnLoad.winOnLoad()");
+        
          let map = new mapboxgl.Map({
             accessToken: WebWasm.MapboxModule.ccall('get_accessToken', 'string', [], []),
             container: 'map',
