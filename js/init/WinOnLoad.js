@@ -8,13 +8,17 @@ class WinOnLoad {
         //console.log("WinOnLoad.init()");
         WinOnLoad.loadWasm();
     }
+    
     /**載入所有wasm模組,全部載入完成再執行 winOnLoad()*/
     static loadWasm() {
         WebWasm.initStaticVar();
     }
+    
     /**loadWasm() complete -->winOnLoad ()*/
     static winOnLoad() {
         console.log("WinOnLoad.winOnLoad()");
+        return;
+        
         //#region for test 副模組 功能 測試:
         /*
         //for test 副模組 功能 測試:----------
