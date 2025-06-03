@@ -17,6 +17,20 @@ class WinOnLoad {
     /**loadWasm() complete -->winOnLoad ()*/
     static winOnLoad() {
         console.log("WinOnLoad.winOnLoad()");
+         let map = new mapboxgl.Map({
+            accessToken: WebWasm.MapboxModule.ccall('get_accessToken', 'string', [], []),
+            container: 'map',
+            //style: 'mapbox://styles/mapbox/satellite-v9',//無中文字;不會發生  glyphs > 65535 not supported 錯誤
+            //style: 'mapbox://styles/mapbox/satellite-streets-v12',
+            style: 'mapbox://styles/mapbox/streets-v12', // streets 一定要載入 mapbox style 否則很多功能都無法用
+            center: [121.506, 25.045], // [121.506,25.045]  [120.892, 23.821]
+            preserveDrawingBuffer: true,//讓畫面可供存檔
+            language: "zh-Hant",
+            projection: 'globe',//預設 投影模式 (若都不指定,系統有時會不穏定,err!!,ex:zoom=2時 )
+            //zoom: 7.2, //14
+            zoom: 14 
+        });
+        
         return;
         
         //#region for test 副模組 功能 測試:
