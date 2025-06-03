@@ -13,6 +13,12 @@
         }
     </style>
 
+    <!--init:-->
+    <script type="text/javascript" src="js/init/WinOnLoad.js?ver=timeVer"></script>
+    <script type="text/javascript" src="js/wasm/WebWasm.js?ver=timeVer"></script>
+    <script type="text/javascript" src="js/wasm/mainWasm.js?ver=timeVer"></script>
+
+
 </head>
 <body>
     <div id="map"></div>
@@ -31,5 +37,16 @@
         html.innerText = str;
 
     </script>
+
+    <script type="text/javascript">
+        // 網頁載入完成
+        window.onload = function () {
+            WinOnLoad.is_tribomap = true;
+            WinOnLoad.init();
+        }
+
+
+    </script>
+
 </body>
 </html>
