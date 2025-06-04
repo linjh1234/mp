@@ -56,6 +56,7 @@ class WinOnLoad {
             //url = "http://" + tribo_map.ip_server + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
 
             //let url = "http://" + "1.34.14.150" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
+            //let url = "https://" + "1.34.14.150" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
             let url = "https://" + "tribomap.ddns.net" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
             map.addSource('custom-terrain', {
                 'type': 'raster-dem',
@@ -74,6 +75,8 @@ class WinOnLoad {
             map.setTerrain({ 'source': 'custom-terrain' }); //, 'exaggeration': 1.5 最好不要加
 
             document.getElementById('map').style.display = '';// 移除 預設 layers後 ;回復 展示
+
+            console.log("custom-terrain : "+url);
 
             //map.showTerrainWireframe = true;
             //map.showLayers3DWireframe = true;
