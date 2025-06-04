@@ -55,7 +55,8 @@ class WinOnLoad {
             //let url: string;
             //url = "http://" + tribo_map.ip_server + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
 
-            let url = "http://" + "1.34.14.150" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
+            //let url = "http://" + "1.34.14.150" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
+            let url = "https://" + "tribomap.ddns.net" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
             map.addSource('custom-terrain', {
                 'type': 'raster-dem',
                 'tiles': [
