@@ -65268,6 +65268,16 @@ function abort(what) {
 }
 Module['abort'] = abort;
 
+    //新增自訂 模組輸出方法:
+    Module["_getMemory"] = _getMemory;
+    function _getMemory() { return wasmMemory }
+
+    Module["_getBuffer"] = _getBuffer;
+    function _getBuffer() { return buffer }
+
+//----------------------------------
+
+
 if (Module['preInit']) {
   if (typeof Module['preInit'] == 'function') Module['preInit'] = [Module['preInit']];
   while (Module['preInit'].length > 0) {
