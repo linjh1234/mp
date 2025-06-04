@@ -13,6 +13,24 @@
         }
     </style>
 
+      <!--設定全域變數:-->
+    <script type="text/javascript">
+        var timeVer;
+        // timeVer = DateTime.Now.ToString("MMdd");//每日更新
+        timeVer = new Date().getTime();
+
+        //three js 相關 模組:-----------
+        var THREE;
+        var OrbitControls;
+        var GLTFLoader;
+        var FontLoader;
+        var Font_Threejs;
+        var TextGeometry
+        var GUI;
+        var OBJLoader;
+
+    </script>
+
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
 
