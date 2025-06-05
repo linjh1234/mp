@@ -115,4 +115,4 @@ class WinOnLoad {
 //靜態屬性:
 /**是否 為 tribo_map.html (展示 向量 圖資)*/
 WinOnLoad.is_tribomap = true;
-//# sourceMappingURL=WinOnLoad.js.map
+
