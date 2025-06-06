@@ -102,8 +102,23 @@ class WinOnLoad {
         return __awaiter(this, void 0, void 0, function* () {
 
             console.log("WinOnLoad.loadJSON()");
+
+            yield WinOnLoad.init_data();
+
         });
-        }
+    }
+
+    static init_data() {
+        return __awaiter(this, void 0, void 0, function* () {
+
+            console.log("WinOnLoad.init_data()");
+
+            
+
+        });
+    }
+
+
 
 }
 
