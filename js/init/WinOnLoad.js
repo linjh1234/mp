@@ -1,4 +1,14 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
 class WinOnLoad {
     //物件屬性:
     constructor() {
@@ -37,36 +47,11 @@ class WinOnLoad {
         map.on('load', function () {
 
 
-            //載入 mapbox  3d 地形 圖資:
-            //使用 自訂 dem
-
-            //#region 
-            //// map.addSource('mapbox-dem', {
-            ////     'type': 'raster-dem',
-            ////     'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-            ////     'tileSize': 512, //128  512
-            ////     //'maxzoom': 14
-            //// });
-            ////map.setTerrain({ 'source': 'mapbox-dem' }); //, 'exaggeration': 1.5  最好不要加
-            //#endregion
-
-
-            //自定 3d 地形 (tribo) 256    PS:若 mapbox 畫面晃動地形錯亂,表示該處應該有地形,通常是產圖漏產所導致
-            //let url: string;
-            //url = "http://" + tribo_map.ip_server + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
-
-            //let url = "http://" + "1.34.14.150" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
-            //let url = "https://" + "1.34.14.150" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
             let url = "https://" + "tribomap.ddns.net" + "/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256";
             map.addSource('custom-terrain', {
                 'type': 'raster-dem',
                 'tiles': [
-                    //"http://114.32.49.78/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256"   //不要用  https 有時無法連
-                    //"http://localhost/tile/rgbtile.ashx?scale={z}&x={x}&y={y}&size=256"   // (本機)不要用  https 有時無法連
                     url
-
-                    // 測試 : http://localhost/tile/rgbtile.ashx?scale=14&x=13700&y=7066&size=256
-                    // 測試 : http://114.32.49.78/tile/rgbtile.ashx?scale=14&x=13700&y=7066&size=256
                 ],
                 'tileSize': 256,
                 'encoding': 'mapbox',
@@ -76,12 +61,12 @@ class WinOnLoad {
 
             document.getElementById('map').style.display = '';// 移除 預設 layers後 ;回復 展示
 
-            console.log("custom-terrain : "+url);
 
-            //map.showTerrainWireframe = true;
-            //map.showLayers3DWireframe = true;
+
 
         });
+
+        WinOnLoad.init();
         
         return;
         
@@ -111,8 +96,24 @@ class WinOnLoad {
         else
             tribo_img.init();
     }
+
+
+    static init() {
+        return __awaiter(this, void 0, void 0, function* () {
+
+            console.log("WinOnLoad.init()");
+        });
+        }
+
 }
+
+
+ 
+
+
+
+
 //靜態屬性:
 /**是否 為 tribo_map.html (展示 向量 圖資)*/
 WinOnLoad.is_tribomap = true;
-
+//# sourceMappingURL=WinOnLoad.js.map
