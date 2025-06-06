@@ -66,7 +66,7 @@ class WinOnLoad {
 
         });
 
-        WinOnLoad.init();
+        WinOnLoad.loadJSON();
         
         return;
         
@@ -98,10 +98,10 @@ class WinOnLoad {
     }
 
 
-    static init() {
+    static loadJSON() {
         return __awaiter(this, void 0, void 0, function* () {
 
-            console.log("WinOnLoad.init()");
+            console.log("WinOnLoad.loadJSON()");
         });
         }
 
