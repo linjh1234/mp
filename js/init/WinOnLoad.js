@@ -113,7 +113,33 @@ class WinOnLoad {
 
             console.log("WinOnLoad.init_data()");
 
-            
+            let k = 1;
+            let rs;
+            let js;
+            let txt;
+            let sp;
+            let fea;
+
+            let host;
+            let url;
+
+            //CityName
+            //rs = yield fetch('data/CityName.json');
+
+            host = "https://tribomap.ddns.net/ppt/";
+            //host = "https://localhost/";
+            url = host + "data/CityName.json";
+            rs = yield fetch(url);
+
+            js = yield rs.json();
+
+            WinOnLoad.CityName = js;
+
+            //console.log("WinOnLoad.CityName: "+url);
+            console.log("WinOnLoad.CityName: " + WinOnLoad.CityName.features[0].properties.name);
+
+
+            k = 1;
 
         });
     }
@@ -131,4 +157,6 @@ class WinOnLoad {
 //靜態屬性:
 /**是否 為 tribo_map.html (展示 向量 圖資)*/
 WinOnLoad.is_tribomap = true;
+WinOnLoad.CityName;
+
 
