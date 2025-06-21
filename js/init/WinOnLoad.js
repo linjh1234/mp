@@ -66,7 +66,7 @@ class WinOnLoad {
 
         });
 
-        WinOnLoad.loadJSON();
+        //WinOnLoad.loadJSON();
         
         return;
         
